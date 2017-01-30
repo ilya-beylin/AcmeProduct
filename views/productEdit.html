@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2> Edit the Product</h2>
+<form action="/edit-product/{{product.id}}" method="POST">
+  <label for="name_field">Product:</label>
+  <input name="name" type="text" value = {{product.name}} id="name_field" />
+
+  <input type="submit" value="Submit" />
+</form>
+
+
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h2 style = 'text-align: center'> Products list</h2>
+<ul class = 'list-group' >
+  <li class = "list-group-item" style = 'text-align: right'>
+  <form method = 'POST' action = 'new_product'>
+    Add product
+    <input type = 'text' name = 'product'>
+    <button type = 'submit' class = 'btn-primary'> Create </button>
+  </form>
+</li>
+
+  {% for product in products %}
+  <li class = "list-group-item">
+    {{product.name}}
+    <span class="btn-group" role="group" aria-label="Basic example" style = "display: inline">
+
+      <form method = 'POST' action = '{{product.id}}?_method=PATCH'>
+        <button type = 'submit' class = 'btn btn-primary'> Edit </button>
+      </form>
+
+      <form method = 'POST' action = '{{product.id}}?_method=DELETE'>
+        <button type = 'submit' class = 'btn btn-danger'> Delete </button>
+      </form>
+
+  </span></li>
+  {% endfor %}
+
+</ul>
+
+
+{% endblock %}
