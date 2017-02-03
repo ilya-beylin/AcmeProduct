@@ -21,9 +21,10 @@ module.exports = {
       var product = this.getProducts().filter(function(item){return item.id === id;})[0];
       return product;
     },
-    editProduct: function(id, name){
+    editProduct: function(id, name){//pass in the product to edit
+      //you've got the product right here. just edit it..
       var toEdit = this.getProducts().filter(function(item){return item.id === id;})[0];
-      var idx = this.getProducts().indexOf(toEdit);
-      this.getProducts()[idx]['name'] = name;
+      var idx = this.getProducts().indexOf(toEdit);//don't think you need this..
+      this.getProducts()[idx]['name'] = name;//or this
     }
 };
